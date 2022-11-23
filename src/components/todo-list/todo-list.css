@@ -1,0 +1,21 @@
+
+.todo-list {
+    padding-left: 0px;
+    margin: 0 auto;
+    padding: 12px;
+    font-size: 0.8em;
+}
+
+ol {
+    padding-left: 0px;
+    list-style: none;
+}
+
+.todo-list .completed-todos {
+    margin-top: 24px;
+}
+
+.todo-list .empty-header {
+    text-align: center;
+    opacity: 0.5;
+}

@@ -1,0 +1,55 @@
+header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  background: white;
+  border-bottom: 10px solid var(--qwik-dark-purple);
+}
+header .logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+header h1 {
+  margin: 0px;
+}
+header .logo a {
+  display: inline-block;
+  padding: 12px;
+  text-decoration: none;
+  color: purple;
+  font-size: 2em;
+  margin-bottom: 4px;
+  text-align: center;
+  border-bottom: 1px solid darkgoldenrod;
+}
+
+header .logo h3 {
+  padding: 4px;
+  margin: 4px;
+}
+
+header ul {
+  margin: 0;
+  padding: 3px 10px 0 0;
+  list-style: none;
+  flex: 1;
+  text-align: right;
+}
+
+header li {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+header li a {
+  display: inline-block;
+  padding: 15px 10px;
+  text-decoration: none;
+}
+
+header li a:hover {
+  text-decoration: underline;
+}

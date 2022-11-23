@@ -1,0 +1,25 @@
+
+
+main {
+    margin: 0 auto;
+    max-width: 40%;
+    background: white;
+    min-height: 100vh;
+}
+
+
+body {
+    font-family: 'Noto Sans', sans-serif;
+    background: #644364;
+}
+
+
+@media (max-width: 760px) {
+    main {
+        max-width: 100%;
+    }
+}
+
+h2 {
+    color: purple;
+}

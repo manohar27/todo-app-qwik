@@ -1,0 +1,20 @@
+.todo-item {
+    list-style: none;
+    display: flex;
+    margin: 10px 0;
+    padding: 8px;
+    box-shadow: 2px 4px 8px 1px rgb(228 228 228);
+    align-items: center;
+}
+
+.todo-item .todo-text {
+    flex: 2;
+}
+
+
+@media (max-width: 760px) {
+    .todo-item {
+    flex-direction: column;
+    }
+
+}

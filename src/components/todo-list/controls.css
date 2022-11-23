@@ -1,0 +1,25 @@
+.controls {
+    display: inline-flex;
+    justify-content: center;
+    flex: 1;
+    align-items: center;
+}
+
+.controls button {
+    outline: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+.controls .action-container {
+    flex: 3;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.controls .timer {
+    flex: 1;
+    border-right: 1px solid lightgray;
+}

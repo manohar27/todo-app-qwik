@@ -1,0 +1,24 @@
+.new-todo {
+    display: flex;
+}
+
+.new-todo input {
+    flex: 3;
+    padding: 4px;
+    line-height: 2em;
+    border: 1px solid #ccc;
+
+}
+
+.new-todo button {
+    flex: 1;
+    margin-left: 8px;
+    background: purple;
+    color: white;
+    cursor: pointer;
+}
+
+.new-todo button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
