@@ -8,8 +8,13 @@ main {
 }
 
 
+@font-face {
+    font-family: 'Mulish';
+    src: url('/public/fonts/Mulish-Light.ttf');
+}
+
 body {
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Mulish', sans-serif;
     background: #644364;
 }
 

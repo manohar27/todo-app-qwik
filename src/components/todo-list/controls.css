@@ -22,4 +22,6 @@
 .controls .timer {
     flex: 1;
     border-right: 1px solid lightgray;
+    padding-right: 8px;
+    text-align: center;
 }

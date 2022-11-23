@@ -18,7 +18,7 @@ export default component$(() => {
         },
         {
           id: "2",
-          text: "Create the lunch and learn slides",
+          text: "Deploy on vercel",
           status: "PENDING",
           timeTaken: 0,
         },
