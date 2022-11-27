@@ -1,4 +1,4 @@
-import { $, component$, useStore, useStylesScoped$ } from "@builder.io/qwik";
+import { component$, useStore, useStylesScoped$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import NewTodo from "./new-todo";
 import TodoItem from "./todo-item";
@@ -47,15 +47,7 @@ export default component$(() => {
           </h4>
         )}
         {todosPending.map((todo) => (
-          <TodoItem
-            key={todo.id}
-            todo={todo}
-            deleteTodo={$((todoID: string) => {
-              todoState.todoList = todoState.todoList.filter(
-                (todo) => todoID !== todo.id
-              );
-            })}
-          />
+          <TodoItem key={todo.id} todo={todo} />
         ))}
       </ol>
 
