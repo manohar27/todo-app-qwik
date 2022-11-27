@@ -1,4 +1,4 @@
-import { component$, useStore, useStylesScoped$ } from "@builder.io/qwik";
+import { $, component$, useStore, useStylesScoped$ } from "@builder.io/qwik";
 import { Link } from "@builder.io/qwik-city";
 import NewTodo from "./new-todo";
 import TodoItem from "./todo-item";
@@ -43,11 +43,18 @@ export default component$(() => {
         {todosPending.length === 0 && (
           <h4 class="empty-header">
             Nothing here. Add a task to get started. If you are all done,{" "}
-            <Link href="/flower">check this out</Link>
+            <a href="/flower">check this out</a>
           </h4>
         )}
         {todosPending.map((todo) => (
-          <TodoItem key={todo.id} todo={todo} />
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            onComplete={$((timeTaken: number) => {
+              todo.status = "DONE";
+              todo.timeTaken = timeTaken;
+            })}
+          />
         ))}
       </ol>
 
