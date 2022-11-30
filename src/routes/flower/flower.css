@@ -21,6 +21,10 @@ input {
   width: 100%;
 }
 
+.title {
+  text-align: center;
+}
+
 .square {
   --size: calc(40px + var(--index) * var(--size-step));
 
