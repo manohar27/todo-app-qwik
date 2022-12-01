@@ -54,6 +54,9 @@ export default component$(() => {
               todo.status = "DONE";
               todo.timeTaken = timeTaken;
             })}
+            onDelete={$(() => {
+              todoState.todoList = todoState.todoList.filter(mappedTodo => mappedTodo.id !== todo.id);
+            })}
           />
         ))}
       </ol>

@@ -14,7 +14,8 @@ export const formatTime = (timeInSeconds: number) => {
 };
 
 export default component$(
-  (props: { onComplete?: PropFunction<(timeTaken: number) => void> }) => {
+  (props: { onComplete?: PropFunction<(timeTaken: number) => void>,
+  onDelete: PropFunction<() => void> }) => {
     useStylesScoped$(controlStyles);
     const timerInfo = useStore({
       timer: {
@@ -58,7 +59,7 @@ export default component$(
           </button>
           <button
             onClick$={() => {
-              console.log("this todo needs to be deleted");
+              props.onDelete();
             }}
           >
             ❌ delete

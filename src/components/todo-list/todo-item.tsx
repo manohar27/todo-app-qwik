@@ -7,6 +7,7 @@ export default component$(
   (props: {
     todo: Todo;
     onComplete?: PropFunction<(timeTaken: number) => void>;
+    onDelete: PropFunction<() => void>;
   }) => {
     useStylesScoped$(todoItemStyles);
     return (
@@ -15,7 +16,7 @@ export default component$(
         {props.todo.status === "DONE" ? (
           <p>✅ in {formatTime(props.todo.timeTaken)}</p>
         ) : (
-          <Controls onComplete={props.onComplete} />
+          <Controls onComplete={props.onComplete} onDelete={props.onDelete} />
         )}
       </li>
     );
