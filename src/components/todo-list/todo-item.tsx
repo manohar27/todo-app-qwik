@@ -6,7 +6,8 @@ import todoItemStyles from "./todo-item.css?inline";
 export default component$(
   (props: {
     todo: Todo;
-    deleteTodo: PropFunction<(todoID: string) => void>;
+    onComplete?: PropFunction<(timeTaken: number) => void>;
+    onDelete: PropFunction<() => void>;
   }) => {
     useStylesScoped$(todoItemStyles);
     return (
@@ -15,7 +16,7 @@ export default component$(
         {props.todo.status === "DONE" ? (
           <p>✅ in {formatTime(props.todo.timeTaken)}</p>
         ) : (
-          <Controls todo={props.todo} deleteTodo={props.deleteTodo} />
+          <Controls onComplete={props.onComplete} onDelete={props.onDelete} />
         )}
       </li>
     );

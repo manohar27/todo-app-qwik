@@ -5,7 +5,6 @@ import {
   useStore,
   useStylesScoped$,
 } from "@builder.io/qwik";
-import { Todo } from ".";
 import controlStyles from "./controls.css?inline";
 
 export const formatTime = (timeInSeconds: number) => {
@@ -15,10 +14,8 @@ export const formatTime = (timeInSeconds: number) => {
 };
 
 export default component$(
-  (props: {
-    todo: Todo;
-    deleteTodo: PropFunction<(todoID: string) => void>;
-  }) => {
+  (props: { onComplete?: PropFunction<(timeTaken: number) => void>,
+  onDelete: PropFunction<() => void> }) => {
     useStylesScoped$(controlStyles);
     const timerInfo = useStore({
       timer: {
@@ -53,8 +50,7 @@ export default component$(
           </button>
           <button
             onClick$={() => {
-              props.todo.status = "DONE";
-              props.todo.timeTaken = timerInfo.timer.duration;
+              props.onComplete(timerInfo.timer.duration);
               clearInterval(timerInfo.timer.timerId);
               isTimerRunning.value = false;
             }}
@@ -63,7 +59,7 @@ export default component$(
           </button>
           <button
             onClick$={() => {
-              props.deleteTodo(props.todo.id);
+              props.onDelete();
             }}
           >
             ❌ delete

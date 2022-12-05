@@ -43,17 +43,19 @@ export default component$(() => {
         {todosPending.length === 0 && (
           <h4 class="empty-header">
             Nothing here. Add a task to get started. If you are all done,{" "}
-            <Link href="/flower">check this out</Link>
+            <a href="/flower">check this out</a>
           </h4>
         )}
         {todosPending.map((todo) => (
           <TodoItem
             key={todo.id}
             todo={todo}
-            deleteTodo={$((todoID: string) => {
-              todoState.todoList = todoState.todoList.filter(
-                (todo) => todoID !== todo.id
-              );
+            onComplete={$((timeTaken: number) => {
+              todo.status = "DONE";
+              todo.timeTaken = timeTaken;
+            })}
+            onDelete={$(() => {
+              todoState.todoList = todoState.todoList.filter(mappedTodo => mappedTodo.id !== todo.id);
             })}
           />
         ))}
