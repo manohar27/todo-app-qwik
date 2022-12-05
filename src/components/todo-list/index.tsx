@@ -1,5 +1,4 @@
 import { $, component$, useStore, useStylesScoped$ } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
 import NewTodo from "./new-todo";
 import TodoItem from "./todo-item";
 import styles from "./todo-list.css?inline";
